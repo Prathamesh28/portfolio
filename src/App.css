@@ -1,0 +1,43 @@
+/* This is the main viewport that holds everything. It prevents overflow. */
+.app-viewport {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Instead of a flex container, each page-section is now positioned 
+  absolutely within the viewport. Their visibility is controlled by transforms.
+*/
+.page-section {
+    width: 100vw;
+    height: 100vh;
+    padding: 40px;
+    
+    /* Position each section in the same spot */
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    /* Center content within each section */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    /* This transition creates the smooth slide effect */
+    transition: transform 1s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+/* Classes to control the position of each slide */
+.page-section.active {
+    transform: translateX(0%); /* The visible section */
+}
+
+.page-section.prev {
+    transform: translateX(-100%); /* Sections that are already passed */
+}
+
+.page-section.next {
+    transform: translateX(100%); /* Sections that are coming up */
+}

@@ -1,0 +1,46 @@
+:root {
+    --dark-navy: #0a192f;
+    --light-navy: #112240;
+    --lightest-navy: #233554;
+    --slate: #8892b0;
+    --light-slate: #a8b2d1;
+    --lightest-slate: #ccd6f6;
+    --cyan: #64ffda;
+    --font-mono: 'Roboto Mono', monospace;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--dark-navy);
+    color: var(--slate);
+    font-family: var(--font-mono);
+    -webkit-font-smoothing: antialiased;
+    
+    /* ADD THIS LINE to hide all scrollbars */
+    overflow: hidden;
+}
+
+h2 {
+    color: var(--lightest-slate);
+    font-size: clamp(26px, 5vw, 32px);
+    margin-bottom: 40px;
+    position: relative;
+    padding-left: 20px;
+}
+
+h2::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 5px;
+    height: 100%;
+    background: var(--cyan);
+    border-radius: 2px;
+}

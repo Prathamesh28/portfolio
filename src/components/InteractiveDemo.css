@@ -1,0 +1,108 @@
+/* DELETED: Remove all styles for .section-content-wrapper, including the scrollbar styles */
+
+.demo-container {
+    display: flex;
+    /* CHANGED: flex-wrap is removed, so it defaults to a single row */
+    gap: 40px;
+    background-color: var(--light-navy);
+    padding: 30px;
+    border-radius: 5px;
+    align-items: center;
+    width: 100%;
+    max-width: 900px; /* Constrain the max width for a clean look */
+}
+
+.canvas-wrapper {
+    flex-shrink: 0;
+}
+
+.canvas-wrapper canvas {
+    background-color: #020c1b;
+    border-radius: 5px;
+    border: 1px solid var(--lightest-navy);
+}
+
+.controls {
+    flex-grow: 1;
+    min-width: 300px;
+}
+
+/* New style for the main title that we moved */
+.controls h2 {
+    color: var(--lightest-slate);
+    font-size: 2rem;
+    margin-bottom: 30px;
+    position: relative;
+    padding-left: 20px;
+}
+.controls h2::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 5px;
+    height: 100%;
+    background: var(--cyan);
+    border-radius: 2px;
+}
+
+
+.controls h3 {
+    color: var(--lightest-slate);
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.controls p {
+    color: var(--slate);
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+.metrics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 30px;
+    font-family: var(--font-mono);
+}
+
+.metrics div {
+    background-color: var(--lightest-navy);
+    padding: 10px;
+    border-radius: 4px;
+    text-align: center;
+    color: var(--slate);
+}
+
+.metrics div span {
+    display: block;
+    color: var(--cyan);
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-top: 5px;
+}
+
+.controls button {
+    background-color: var(--cyan);
+    color: var(--dark-navy);
+    border: none;
+    padding: 12px 24px;
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.controls button:hover:not(:disabled) {
+    background-color: #a0ffec;
+}
+
+.controls button:disabled {
+    background-color: var(--slate);
+    cursor: not-allowed;
+}

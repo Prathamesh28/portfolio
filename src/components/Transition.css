@@ -1,0 +1,30 @@
+.transition-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    /* CHANGED: Increased opacity from 0.85 to 0.95 to hide the background more */
+    background-color: rgba(10, 25, 47, 0.95);
+    backdrop-filter: blur(5px);
+    z-index: 9999;
+    
+    /* CHANGED: Added a keyframe animation for a smooth fade-in and fade-out */
+    animation: fadeInOut 1.5s ease-in-out forwards;
+}
+
+/* This keyframe animation controls the fade effect */
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+    }
+    20% { /* Fade in for the first 20% of the animation */
+        opacity: 1;
+    }
+    80% { /* Hold full opacity while the JS animation runs */
+        opacity: 1;
+    }
+    100% { /* Fade out at the end */
+        opacity: 0;
+    }
+}

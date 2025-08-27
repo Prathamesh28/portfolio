@@ -1,0 +1,67 @@
+
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.project-card {
+    background-color: var(--light-navy);
+    padding: 25px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    background-color: var(--lightest-navy);
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.project-header h3 {
+    color: var(--lightest-slate);
+    font-size: 1.3rem;
+    margin-right: 15px; /* Add space between title and links */
+}
+
+.project-links a {
+    color: var(--slate);
+    font-size: 1.4rem;
+    margin-left: 15px;
+    transition: color 0.3s ease;
+}
+
+.project-links a:hover {
+    color: var(--cyan);
+}
+
+.project-card p {
+    color: var(--slate);
+    flex-grow: 1; /* Allows the description to take up available space */
+}
+
+.project-tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+}
+
+.project-tech-list span {
+    background-color: var(--lightest-navy);
+    color: var(--cyan);
+    padding: 5px 10px;
+    border-radius: 15px;
+}
